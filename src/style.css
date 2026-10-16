@@ -28,3 +28,5 @@
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url('../vendor/fonts/open-sans-400.woff2') format('woff2')}
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url('../vendor/fonts/open-sans-700.woff2') format('woff2')}
 .font-preview[data-font='Open Sans']{font-family:'Open Sans',Arial,sans-serif}
+
+.pagination-preview{height:120px;max-width:240px;background:#eef2ee;border:1px solid var(--line);border-radius:6px;position:relative;margin:12px 0}.pagination-preview span{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:28px;height:28px;border:1px solid white;border-radius:50%;background:white;color:black;display:flex;align-items:center;justify-content:center;font:10pt Arial,sans-serif}.pagination-preview[data-area='Cabeçalho'] span{top:8px;bottom:auto}.pagination-preview[data-align='Esquerda'] span{left:10px;transform:none}.pagination-preview[data-align='Direita'] span{left:auto;right:10px;transform:none}

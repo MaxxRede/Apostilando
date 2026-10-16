@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.12.0
+
+Adiciona as seis posições de paginação com prévia e persistência em projeto/backup. A exportação renderiza Arial local 10 pt, número preto em círculo branco com borda branca, independente da fonte do conteúdo, reservando uma faixa sem cortar a imagem. Corrige nomes do ZIP para prefixo com sublinhado e título, como 01_Precificar.png, e adiciona download individual com prefixo. O Flow continua sem garantia de obedecer à nomeação; os downloads do Apostilando aplicam o padrão diretamente. 63 testes aprovados.
+
+
 ## 1.11.0
 
 Adiciona Auto na seleção de fonte. Escolhe Lato, Nunito ou Open Sans, famílias fora da lista manual, e preserva a escolha em todo o projeto, nos prompts, nas correções e no backup. Inclui arquivos locais 400/700 para prévia fiel. Corrige a versão de mammoth no manifesto/lock, que havia sido alterada junto à versão do projeto.

@@ -24,18 +24,19 @@ export async function extractDocument(file,{pdfjs,mammoth,pdfOptions={},onProgre
  if(!text.trim())throw new Error('O documento não contém texto extraível. Se for escaneado, aplique OCR antes de importar.');
  return {text,warnings};
 }
-export async function createImagePDF({images,title,PDFLib,convertWebP,compact=false,compressImage,paginate=false,fontFamily='Arial',pageRoles=[],onProgress=()=>{}}){
+export async function createImagePDF({images,title,PDFLib,convertWebP,compact=false,compressImage,paginate=false,fontFamily='Arial',pageRoles=[],numberArea='Rodapé',numberAlign='Centro',renderNumber,onProgress=()=>{}}){
  if(!images.length)throw new Error('Importe as imagens primeiro.');
  if(!PDFLib)throw new Error('Biblioteca PDF indisponível.');
- const doc=await PDFLib.PDFDocument.create();doc.setTitle(title||'Apostilando');doc.setCreator('Apostilando');const footerFont=paginate?await doc.embedFont(/courier/i.test(fontFamily)?PDFLib.StandardFonts.Courier:/times|georgia/i.test(fontFamily)?PDFLib.StandardFonts.TimesRoman:PDFLib.StandardFonts.Helvetica):null;
+ const doc=await PDFLib.PDFDocument.create();doc.setTitle(title||'Apostilando');doc.setCreator('Apostilando');const footerFont=paginate&&!renderNumber?await doc.embedFont(PDFLib.StandardFonts.Helvetica):null;
  for(let i=0;i<images.length;i++){
   onProgress(i+1,images.length);let data=images[i].data;let image;if(compact){if(!compressImage)throw new Error('Compactador de imagens indisponível.');data=await compressImage(data);}
   if(data.startsWith('data:image/png;'))image=await doc.embedPng(data);
   else if(data.startsWith('data:image/jpeg;'))image=await doc.embedJpg(data);
   else if(data.startsWith('data:image/webp;')){if(!convertWebP)throw new Error('Conversor WebP indisponível.');image=await doc.embedPng(await convertWebP(data));}
   else throw new Error('Formato de imagem inválido.');
-  const pw=595.28,ph=841.89,hasFooter=paginate&&!['cover','backcover'].includes(pageRoles[i]),footerHeight=hasFooter?36:0,scale=Math.min(pw/image.width,(ph-footerHeight)/image.height),width=image.width*scale,height=image.height*scale;
-  const page=doc.addPage([pw,ph]);page.drawRectangle({x:0,y:0,width:pw,height:ph,color:PDFLib.rgb(1,1,1)});page.drawImage(image,{x:(pw-width)/2,y:footerHeight+(ph-footerHeight-height)/2,width,height});if(hasFooter){const number=String(i+1).padStart(2,'0'),fontSize=10;page.drawText(number,{x:(pw-footerFont.widthOfTextAtSize(number,fontSize))/2,y:14,font:footerFont,size:fontSize,color:PDFLib.rgb(.2,.2,.2)});}
+  const pw=595.28,ph=841.89,hasNumber=paginate&&!['cover','backcover'].includes(pageRoles[i]),band=hasNumber?36:0,top=numberArea==='Cabeçalho',bottom=top?0:band,scale=Math.min(pw/image.width,(ph-band)/image.height),width=image.width*scale,height=image.height*scale;
+  const page=doc.addPage([pw,ph]);page.drawRectangle({x:0,y:0,width:pw,height:ph,color:PDFLib.rgb(1,1,1)});page.drawImage(image,{x:(pw-width)/2,y:bottom+(ph-band-height)/2,width,height});if(hasNumber){const number=String(i+1).padStart(2,'0'),cx=numberAlign==='Esquerda'?30:numberAlign==='Direita'?pw-30:pw/2,cy=top?ph-18:18;page.drawCircle({x:cx,y:cy,size:14,color:PDFLib.rgb(1,1,1),borderColor:PDFLib.rgb(1,1,1),borderWidth:1});if(renderNumber){const badge=await doc.embedPng(await renderNumber(number));page.drawImage(badge,{x:cx-14,y:cy-14,width:28,height:28});}else{page.drawText(number,{x:cx-footerFont.widthOfTextAtSize(number,10)/2,y:cy-4,font:footerFont,size:10,color:PDFLib.rgb(0,0,0)});}}
+
  }
  return doc.save();
 }

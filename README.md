@@ -130,7 +130,7 @@ Os nomes descritivos atribuídos pelo Flow, como `Woman_holding_tablet_2026...jp
 1. Importe as imagens em Montar PDF.
 2. Confira as miniaturas. Clique, segure e arraste uma imagem sobre a posição desejada. Também pode usar as setas ou o campo Posição no PDF.
 3. A ordem exibida é a ordem usada na exportação do PDF e no ZIP numerado.
-4. Clique em Baixar imagens numeradas (ZIP) para obter nomes reais como `01.jpg`, `02.png`, `03.jpg`, preservando as extensões e os bytes originais. Extraia esse ZIP para ver os arquivos organizados no Windows. Os arquivos antigos da pasta Downloads não são modificados.
+4. Clique em Baixar imagens numeradas (ZIP) para obter nomes reais como `01_Precificar.jpg`, `02_Como_fazer.png`, `03_Exemplo.jpg`, preservando as extensões e os bytes originais. Extraia esse ZIP para ver os arquivos organizados no Windows. Os arquivos antigos da pasta Downloads não são modificados.
 
 O cartão exibe o nome original e o novo nome no ZIP. Uma coleção de 100 imagens usa `001` a `100` para manter a ordenação por nome. O botão de ordenação por prefixo aceita nomes como `01_capa`, `pagina_02` e `10_conteudo`. Se algum nome não identificar uma página, o sistema pede organização manual em vez de supor a sequência pelo assunto ou pela data.
 
@@ -146,7 +146,7 @@ A função usa o idioma atual do projeto, inclusive se espanhol ou inglês tiver
 
 Os prompts agora usam um padrão fixo: Arial negrito 28 pt nos títulos, Arial negrito 18 pt nos subtítulos, Arial regular 12 pt no corpo e 10 pt nas legendas. Alinhamento à esquerda, título na mesma referência superior e entrelinha 1,35. O estilo da ilustração não muda a tipografia. As opções antigas de lettering e AUTO não são aplicadas aos novos prompts, inclusive em projetos antigos. A IA externa ainda pode não respeitar o pedido; isso não constitui composição tipográfica garantida no Apostilando.
 
-**Paginação padronizada pelo sistema no PDF** vem habilitada: o exportador reserva uma faixa de rodapé e desenha texto real em 10 pt usando uma fonte padrão PDF compatível com a família escolhida (Helvetica para famílias sem serifa, Times para Georgia/Times New Roman e Courier para Courier New), centralizado horizontalmente e com a mesma coordenada vertical de 14 pt acima da borda inferior. Essa numeração não depende da IA. A sequência acompanha a posição física das imagens (02 para a segunda imagem, por exemplo). A imagem é ajustada na área restante sem cortes. Os tipos Capa e Contracapa do planejamento não recebem número; capas avulsas também não. Confirme que a ordem das imagens corresponde ao planejamento. É possível desabilitar a numeração pelo checkbox.
+**Paginação padronizada pelo sistema no PDF** permite escolher Cabeçalho ou Rodapé e Esquerda, Centro ou Direita. O número é preto, Arial 10, em um círculo branco com borda branca. O navegador renderiza os algarismos usando a Arial local e os inclui no PDF a 4× de resolução, sem depender da fonte do conteúdo. Se o navegador verificar que Arial não está instalada, a exportação avisa em vez de substituí-la silenciosamente. Uma faixa de 36 pt é reservada na borda escolhida, sem cortar a imagem. A sequência acompanha a posição física das imagens. Capa e Contracapa do planejamento e capas avulsas ficam sem número. A escolha de posição fica salva no projeto e no backup. Confirme a correspondência entre imagens e planejamento.
 
 Novos prompts pedem que o Flow não desenhe números de página. Para imagens já geradas com fonte ou paginação irregular, clique em **Padronizar visual no Flow**, anexe a imagem original e use o comando de edição. Ele pede a família e os tamanhos fixos e a remoção apenas dos números de página, preservando os números do conteúdo. Depois confira e use Substituir imagem. O Apostilando não apaga automaticamente números ou muda as letras que já fazem parte dos pixels; a exportação não remove paginação desenhada anteriormente.
 
@@ -198,3 +198,8 @@ Há 30 estilos, com Pixel art removido e oito novas técnicas com prévias: guac
 ## Fonte Auto (1.11.0)
 
 Auto escolhe uma família entre Lato, Nunito e Open Sans, diferentes das oito fontes manuais. A escolha é estável por projeto e aparece na prévia; mudar tema, perfil ou estilo não troca a fonte. Ao voltar para Auto, o projeto mantém sua escolha. Os prompts de todas as páginas e de correção usam o nome concreto da família, nunca deixam o Flow escolher uma fonte por página. As três famílias incluem arquivos locais regulares e em negrito e são preservadas no backup.
+
+
+## Prefixos garantidos ao baixar (1.12.0)
+
+Em Montar PDF, Baixar com prefixo salva uma imagem como 01_Titulo.png (com a extensão original). O ZIP usa a mesma regra para todas as imagens na ordem exibida, preferindo o título da página planejada. Sem planejamento, usa uma versão limpa do nome original. Nenhum arquivo original ou seus bytes é alterado. O Flow recebe a orientação de nomear, mas os downloads diretos dele continuam fora do controle do Apostilando. Para nomes garantidos, importe, confira a ordem e baixe pelo sistema.
