@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.1.1
+
+Reforça português do Brasil como idioma padrão e as regras de idioma em títulos, legendas, rótulos e textos visíveis. Aplica a instrução no prompt individual, em cada página do roteiro e na revisão final. Conteúdo de origem em outro idioma deve ser traduzido fielmente para o idioma selecionado, sem resumo ou perda de informações. Orienta personagens com roupas e ambientes contemporâneos, salvo contexto histórico explicitamente solicitado, mantendo a identidade entre páginas. Inclui quatro testes específicos; 24 testes no total.
+
 ## 1.1.0
 
 Revisão funcional dos módulos de criação, documentos, imagens, PDF e acervo. Adiciona planejamento manual, foto/logo de referência e impressão dos prompts. Corrige preservação de favoritos, divisão de texto, roteiro integral de documentos e ordenação de imagens. Inclui avisos de extração parcial de PDF e validação mais rigorosa dos backups. Amplia a verificação para 20 testes.
