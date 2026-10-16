@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.11.0
+
+Adiciona Auto na seleção de fonte. Escolhe Lato, Nunito ou Open Sans, famílias fora da lista manual, e preserva a escolha em todo o projeto, nos prompts, nas correções e no backup. Inclui arquivos locais 400/700 para prévia fiel. Corrige a versão de mammoth no manifesto/lock, que havia sido alterada junto à versão do projeto.
+
+
 ## 1.10.0
 
 Remove Pixel art e adiciona guache, óleo, xilogravura, low poly, line art, chibi, webtoon e retrofuturismo, totalizando 30 estilos com prévias. Mantém o mapeamento das amostras anteriores. Prompts individuais começam pelo nome sequencial do arquivo, e as orientações de nomeação são reforçadas nos prompts individuais e no lote. Projetos em Pixel art migram para Desenhado à mão sem perder páginas.

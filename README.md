@@ -193,3 +193,8 @@ Além de Qualquer assunto e Apostila escolar, há perfis para gestores, vendedor
 ## Mais estilos e nomes sequenciais (1.10.0)
 
 Há 30 estilos, com Pixel art removido e oito novas técnicas com prévias: guache, óleo, xilogravura, low poly, line art, chibi, webtoon e retrofuturismo. Cada prompt individual começa pelo nome sugerido, como 01_Precificar.png e 02_Como_fazer.png. O Flow recebe instruções para usar o identificador também no download quando esse recurso estiver disponível. Se o Flow não nomear os arquivos, é necessário renomeá-los ou usar a ordenação manual e o ZIP numerado do Apostilando. Os identificadores não são desenhados na imagem.
+
+
+## Fonte Auto (1.11.0)
+
+Auto escolhe uma família entre Lato, Nunito e Open Sans, diferentes das oito fontes manuais. A escolha é estável por projeto e aparece na prévia; mudar tema, perfil ou estilo não troca a fonte. Ao voltar para Auto, o projeto mantém sua escolha. Os prompts de todas as páginas e de correção usam o nome concreto da família, nunca deixam o Flow escolher uma fonte por página. As três famílias incluem arquivos locais regulares e em negrito e são preservadas no backup.
