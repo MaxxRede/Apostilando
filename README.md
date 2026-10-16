@@ -98,3 +98,9 @@ A decodificação visual das imagens no teste de interface usa um adaptador simu
 ## Ajuste de idioma e personagens (1.1.1)
 
 Português do Brasil é o padrão dos novos projetos e o fallback de idioma ausente. Os prompts reforçam o idioma em todo texto visível e em cada página do roteiro. A seleção explícita de espanhol ou inglês continua disponível. Quando o texto importado estiver em outro idioma, a instrução pede tradução fiel para o idioma selecionado, preservando as informações; a extração local continua sem alterar o documento. Personagens devem ter aparência contemporânea e consistente, salvo tema histórico explicitamente solicitado. Copie novamente os prompts após atualizar: imagens já geradas no Flow não são alteradas automaticamente. As instruções reduzem divergências, mas o resultado da IA externa precisa ser revisado.
+
+## Composição da apostila (1.2.0)
+
+Marque Capa, Contracapa e Síntese final do aprendizado antes de planejar. Capa e síntese vêm marcadas em novos projetos; contracapa é opcional. A quantidade informada é o total, incluindo esses itens. Exemplo: 14 páginas com os três itens = capa + 11 páginas de conteúdo + síntese + contracapa. O mínimo é uma página de conteúdo além dos itens selecionados.
+
+O documento importado é distribuído integralmente entre as páginas de conteúdo. A síntese pede principais conceitos, habilidades, aplicação prática, checklist e autoavaliação, com base no material. Os prompts para capa e contracapa não incluem numeração visível. Em projetos já planejados, mudar os marcadores não apaga páginas: use Planejar páginas para aplicar a nova estrutura, após revisar o aviso de substituição. Os títulos e conteúdos continuam editáveis. Fichas e capas avulsas não usam esses marcadores.

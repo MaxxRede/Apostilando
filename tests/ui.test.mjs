@@ -16,8 +16,9 @@ test('fluxo de edição, salvamento, histórico, favoritos e montagem',async()=>
  await import('../src/app.js');
  const el=s=>w.document.querySelector(s);const click=async s=>{assert.ok(el(s),s);el(s).click();await tick();};
  const input=(key,value)=>{const e=el(`[data-field="${key}"]`);e.value=value;e.dispatchEvent(new w.Event('input',{bubbles:true}));};
+ assert.equal(w.document.querySelectorAll('[data-marker]').length,3);assert.equal(el('[data-marker="includeCover"]').checked,true);assert.equal(el('[data-marker="includeSummary"]').checked,true);await click('[data-marker="includeBackCover"]');assert.equal(el('[data-marker="includeBackCover"]').checked,true);
  input('title','Roteirização de vendas');input('count','14');await click('[data-act="plan"]');
- assert.equal(w.document.querySelectorAll('.page-card').length,14);
+ assert.equal(w.document.querySelectorAll('.page-card').length,14);assert.ok(w.document.querySelectorAll('.page-head strong')[13].textContent.includes('Contracapa'));
  await click('[data-act="copy-batch"]');assert.ok(copied[0].includes('=== PÁGINA 14 ==='));
  const content=el('[data-page="0"][data-key="content"]');content.value='Meu texto integral';content.dispatchEvent(new w.Event('input',{bubbles:true}));
  await click('[data-act="save"]');

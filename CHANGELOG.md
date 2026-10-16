@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.2.0
+
+Adiciona marcadores independentes para capa, contracapa e síntese final do aprendizado. A quantidade informada é o total de páginas, incluindo os itens escolhidos, com ao menos uma página de conteúdo. Ordem inicial: capa, conteúdo, síntese e contracapa. Textos importados são preservados nas páginas de conteúdo. A síntese individual recebe as páginas atuais como referência e pede conceitos, aplicação, checklist e autoavaliação. Capa e contracapa não têm numeração visível. As escolhas e os tipos das páginas são preservados em backup. 28 testes aprovados.
+
 ## 1.1.1
 
 Reforça português do Brasil como idioma padrão e as regras de idioma em títulos, legendas, rótulos e textos visíveis. Aplica a instrução no prompt individual, em cada página do roteiro e na revisão final. Conteúdo de origem em outro idioma deve ser traduzido fielmente para o idioma selecionado, sem resumo ou perda de informações. Orienta personagens com roupas e ambientes contemporâneos, salvo contexto histórico explicitamente solicitado, mantendo a identidade entre páginas. Inclui quatro testes específicos; 24 testes no total.
