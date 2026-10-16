@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.8.0
+
+Adiciona amostras visuais dos 23 estilos de ilustração, com a mesma cena para comparação, navegação anterior/próximo e ampliação. As prévias são ilustrativas e não garantem o resultado do Flow.
+
 ## 1.7.0
 
 Adiciona visualizador da fonte escolhida com título, subtítulo, parágrafo, números e acentos. Montserrat é incluída localmente em 400/700; fontes de sistema ausentes são sinalizadas. A quantidade informada agora conta somente páginas de conteúdo: capa, síntese e contracapa são extras. 14 conteúdos com três extras geram 17 páginas. Suporta até 100 conteúdos + 3 extras, preserva textos e migra o contador de projetos antigos sem alterar suas páginas. 53 testes aprovados.

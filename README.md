@@ -173,3 +173,8 @@ Abaixo de Fonte de todas as páginas, a prévia mostra título, subtítulo, par�
 **Páginas de conteúdo** é a quantidade principal. Capa, contracapa e síntese são adicionadas por fora dessa quantidade. O cálculo aparece abaixo dos marcadores: por exemplo, 14 conteúdos + 3 extras = 17 páginas no PDF. O limite é 100 conteúdos e até três extras, com suporte a 103 imagens. O texto importado é dividido apenas nas páginas de conteúdo.
 
 Projetos antigos mantêm exatamente as páginas já salvas. Quando abertos, o contador é ajustado para refletir a quantidade de páginas de conteúdo existentes, sem recriar ou apagar o material. Novos planejamentos seguem a regra de extras. A importação de backups aplica a mesma migração.
+
+
+## Prévia dos estilos (1.8.0)
+
+O seletor de estilo mostra uma amostra visual da mesma cena em cada técnica. Use as setas para percorrer os 23 estilos ou escolha pelo nome. Ampliar prévia abre a amostra maior. As imagens são exemplos ilustrativos, não uma simulação exata do Flow.
