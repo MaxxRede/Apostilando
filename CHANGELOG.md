@@ -1,5 +1,17 @@
 # Alterações
 
+## 1.6.0
+
+Amplia para 23 estilos, incluindo quadrinhos, tirinhas, HQ brasileira com referência Turma da Mônica, aventura com referência ThunderCats, cartoon com referência Simpsons, mangá, anime, super-heróis, referências Disney/DreamWorks, aquarela, lápis, papel recortado, massinha, pixel art, infográfico, sketchnote e fotografia. Cada opção produz orientação visual própria e exige consistência entre páginas, mantendo a fonte e o idioma escolhidos. Inclui as correções de Novo material e seleção de fonte descritas em 1.5.1/1.5.2. A espera do teste de interface agora observa a conclusão da operação em vez de presumir que o PDF estará pronto em um intervalo fixo. 50 testes aprovados.
+
+## 1.5.2
+
+Restaura escolha de família tipográfica pelo usuário: Arial, Helvetica, Calibri, Verdana, Montserrat, Georgia, Times New Roman e Courier New. A família selecionada se repete nos prompts individuais, no roteiro e no comando de correção visual; tamanhos e alinhamentos permanecem uniformes. A seleção é salva no projeto e no backup. Inclui a correção do botão Novo material descrita em 1.5.1. 48 testes aprovados.
+
+## 1.5.1
+
+Melhora Novo material: preserva o trabalho atual antes de abrir um formulário em branco, retorna ao topo, foca o título e confirma a ação. Trabalhos com conteúdo sem título recebem um nome temporário antes do salvamento. A criação a partir do Histórico também abre e foca a tela correta. 46 testes passam com novas verificações de foco, limpeza e preservação do projeto anterior.
+
 ## 1.5.0
 
 Define padrão tipográfico fixo Arial nos prompts: títulos 28 pt, subtítulos 18 pt, corpo 12 pt e legendas 10 pt; remove escolhas de lettering/AUTO da interface. Novas imagens são solicitadas sem paginação desenhada. O PDF aplica numeração real de 10 pt no centro do rodapé, na mesma coordenada vertical, reservando espaço sem cortar a imagem. Capa/contracapa seguem os tipos das páginas planejadas e não recebem números. Adiciona comando Padronizar visual no Flow para corrigir fontes de imagens existentes e remover paginação desenhada. 46 testes aprovados, incluindo extração da posição e tamanho da numeração em PDF real.
