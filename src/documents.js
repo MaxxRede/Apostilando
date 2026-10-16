@@ -24,18 +24,18 @@ export async function extractDocument(file,{pdfjs,mammoth,pdfOptions={},onProgre
  if(!text.trim())throw new Error('O documento não contém texto extraível. Se for escaneado, aplique OCR antes de importar.');
  return {text,warnings};
 }
-export async function createImagePDF({images,title,PDFLib,convertWebP,compact=false,compressImage,onProgress=()=>{}}){
+export async function createImagePDF({images,title,PDFLib,convertWebP,compact=false,compressImage,paginate=false,pageRoles=[],onProgress=()=>{}}){
  if(!images.length)throw new Error('Importe as imagens primeiro.');
  if(!PDFLib)throw new Error('Biblioteca PDF indisponível.');
- const doc=await PDFLib.PDFDocument.create();doc.setTitle(title||'Apostilando');doc.setCreator('Apostilando');
+ const doc=await PDFLib.PDFDocument.create();doc.setTitle(title||'Apostilando');doc.setCreator('Apostilando');const footerFont=paginate?await doc.embedFont(PDFLib.StandardFonts.Helvetica):null;
  for(let i=0;i<images.length;i++){
   onProgress(i+1,images.length);let data=images[i].data;let image;if(compact){if(!compressImage)throw new Error('Compactador de imagens indisponível.');data=await compressImage(data);}
   if(data.startsWith('data:image/png;'))image=await doc.embedPng(data);
   else if(data.startsWith('data:image/jpeg;'))image=await doc.embedJpg(data);
   else if(data.startsWith('data:image/webp;')){if(!convertWebP)throw new Error('Conversor WebP indisponível.');image=await doc.embedPng(await convertWebP(data));}
   else throw new Error('Formato de imagem inválido.');
-  const pw=595.28,ph=841.89,scale=Math.min(pw/image.width,ph/image.height),width=image.width*scale,height=image.height*scale;
-  const page=doc.addPage([pw,ph]);page.drawRectangle({x:0,y:0,width:pw,height:ph,color:PDFLib.rgb(1,1,1)});page.drawImage(image,{x:(pw-width)/2,y:(ph-height)/2,width,height});
+  const pw=595.28,ph=841.89,hasFooter=paginate&&!['cover','backcover'].includes(pageRoles[i]),footerHeight=hasFooter?36:0,scale=Math.min(pw/image.width,(ph-footerHeight)/image.height),width=image.width*scale,height=image.height*scale;
+  const page=doc.addPage([pw,ph]);page.drawRectangle({x:0,y:0,width:pw,height:ph,color:PDFLib.rgb(1,1,1)});page.drawImage(image,{x:(pw-width)/2,y:footerHeight+(ph-footerHeight-height)/2,width,height});if(hasFooter){const number=String(i+1).padStart(2,'0'),fontSize=10;page.drawText(number,{x:(pw-footerFont.widthOfTextAtSize(number,fontSize))/2,y:14,font:footerFont,size:fontSize,color:PDFLib.rgb(.2,.2,.2)});}
  }
  return doc.save();
 }

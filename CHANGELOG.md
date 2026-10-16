@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.5.0
+
+Define padrão tipográfico fixo Arial nos prompts: títulos 28 pt, subtítulos 18 pt, corpo 12 pt e legendas 10 pt; remove escolhas de lettering/AUTO da interface. Novas imagens são solicitadas sem paginação desenhada. O PDF aplica numeração real de 10 pt no centro do rodapé, na mesma coordenada vertical, reservando espaço sem cortar a imagem. Capa/contracapa seguem os tipos das páginas planejadas e não recebem números. Adiciona comando Padronizar visual no Flow para corrigir fontes de imagens existentes e remover paginação desenhada. 46 testes aprovados, incluindo extração da posição e tamanho da numeração em PDF real.
+
 ## 1.4.1
 
 Repete a escolha de idioma explicitamente dentro de cada página do roteiro. Exibe o idioma alvo em Montar PDF e adiciona Corrigir idioma no Flow: comando de edição que traduz integralmente o texto da imagem anexada, preservando personagens e composição. Adiciona Substituir imagem no mesmo cartão, sem mudar a posição no PDF. Não realiza tradução automática nem leitura OCR; o resultado do Flow precisa de conferência. 43 testes aprovados.
