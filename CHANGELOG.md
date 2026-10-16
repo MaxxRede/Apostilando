@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.15.1
+
+Corrige a interpretação de padronização: cada página mantém seu título temático na imagem; o padrão é fonte, tamanho, cor, alinhamento e posição. Retira a orientação para omitir o título no Flow. Separa a identificação fixa e impede que a recomposição opcional reutilize o título geral da apostila. Recomposição fica desativada por padrão e projetos da versão anterior são migrados para essa configuração.
+
+
 ## 1.15.0
 
 Adiciona títulos compostos pelo exportador PDF com fonte escolhida, 28 pt negrito, alinhamento à esquerda, área fixa e máximo de três linhas sem reduzir tamanho. Disponibiliza título editável por imagem e corte superior manual com faixa marcada, preservando originais. O modo pede ao Flow apenas o corpo ilustrado nas próximas gerações. Novos projetos têm o modo ativado; projetos anteriores mantêm a composição original até ativação explícita. Mantém a posição do título entre capa e conteúdo mesmo com paginação no cabeçalho.
