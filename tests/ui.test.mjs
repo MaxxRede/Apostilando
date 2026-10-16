@@ -4,10 +4,11 @@ import {readFile} from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
 import {indexedDB} from 'fake-indexeddb';
 import * as PDFLib from 'pdf-lib';
+import {jpegData} from './jpeg-fixture.js';
 const tick=()=>new Promise(r=>setTimeout(r,35));
 test('fluxo de edição, salvamento, histórico, favoritos e montagem',async()=>{
  const dom=new JSDOM(await readFile('index.html','utf8'),{url:'http://localhost/#apostilas'});
- const w=dom.window;w.PDFLib=PDFLib;globalThis.FileReader=w.FileReader;globalThis.Image=class{set src(v){queueMicrotask(()=>this.onload());}naturalWidth=1;naturalHeight=1;};w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
+ const w=dom.window;w.HTMLCanvasElement.prototype.getContext=()=>({fillRect(){},drawImage(){}});w.HTMLCanvasElement.prototype.toDataURL=()=>jpegData;w.PDFLib=PDFLib;globalThis.FileReader=w.FileReader;globalThis.Image=class{set src(v){queueMicrotask(()=>this.onload());}naturalWidth=1;naturalHeight=1;};w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
  for(const [k,v] of Object.entries({window:w,document:w.document,location:w.location,indexedDB,confirm:()=>true}))Object.defineProperty(globalThis,k,{value:v,configurable:true});
  const pending=[];const nativeTimeout=globalThis.setTimeout;globalThis.setTimeout=(...args)=>{const t=nativeTimeout(...args);pending.push(t);return t;};
  const nativeInterval=globalThis.setInterval;globalThis.setInterval=(...args)=>{const t=nativeInterval(...args);t.unref();return t;};
@@ -19,7 +20,7 @@ test('fluxo de edição, salvamento, histórico, favoritos e montagem',async()=>
  assert.equal(w.document.querySelectorAll('[data-marker]').length,3);assert.equal(el('[data-marker="includeCover"]').checked,true);assert.equal(el('[data-marker="includeSummary"]').checked,true);await click('[data-marker="includeBackCover"]');assert.equal(el('[data-marker="includeBackCover"]').checked,true);
  input('title','Roteirização de vendas');input('count','14');await click('[data-act="plan"]');
  assert.equal(w.document.querySelectorAll('.page-card').length,14);assert.ok(w.document.querySelectorAll('.page-head strong')[13].textContent.includes('Contracapa'));
- await click('[data-act="copy-batch"]');assert.ok(copied[0].includes('=== PÁGINA 14 ==='));
+ await click('[data-act="copy-batch"]');assert.ok(copied[0].includes('=== PÁGINA 14 ==='));assert.ok(copied[0].includes('NOME DO ARQUIVO DESTA PÁGINA: 01_'));await click('[data-act="image-manifest"]');assert.equal((await downloads.at(-1).text()).split('\n').length,14);
  const content=el('[data-page="0"][data-key="content"]');content.value='Meu texto integral';content.dispatchEvent(new w.Event('input',{bubbles:true}));
  await click('[data-act="save"]');
  w.location.hash='historico';await tick();assert.equal(w.document.querySelectorAll('.project-card').length,1);
@@ -47,11 +48,11 @@ test('fluxo de edição, salvamento, histórico, favoritos e montagem',async()=>
  // Importação real de arquivos PNG pelo FileReader, ordem numérica, PDF e referência.
  const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a9e0AAAAASUVORK5CYII=','base64');
  const reference=el('#reference-file');Object.defineProperty(reference,'files',{value:[new w.File([png],'logo.png',{type:'image/png'})]});reference.dispatchEvent(new w.Event('change',{bubbles:true}));await tick();assert.ok(el('.reference-preview'));
- await click('[data-act="tab-pdf"]');const imageInput=el('#image-files');Object.defineProperty(imageInput,'files',{value:[new w.File([png],'pagina_10.png',{type:'image/png'}),new w.File([png],'pagina_2.png',{type:'image/png'})]});imageInput.dispatchEvent(new w.Event('change',{bubbles:true}));await tick();assert.equal(w.document.querySelectorAll('.image-card').length,2);assert.ok(el('.image-card p').textContent.includes('pagina_2.png'));
+ await click('[data-act="tab-pdf"]');assert.ok(el('#image-drop'));assert.equal(el('[data-field="pdfMode"]').value,'Compacto (recomendado)');const imageInput=el('#image-files');Object.defineProperty(imageInput,'files',{value:[new w.File([png],'pagina_10.png',{type:'image/png'}),new w.File([png],'pagina_2.png',{type:'image/png'})]});imageInput.dispatchEvent(new w.Event('change',{bubbles:true}));await tick();assert.equal(w.document.querySelectorAll('.image-card').length,2);assert.ok(el('.image-card p').textContent.includes('pagina_2.png'));
  await click('[data-act="image-down"][data-i="0"]');assert.ok(el('.image-card p').textContent.includes('pagina_10.png'));
- await click('[data-act="export-pdf"]');assert.equal((await PDFLib.PDFDocument.load(await downloads.at(-1).arrayBuffer())).getPageCount(),2);
- await click('[data-act="backup-current"]');const withImages=JSON.parse(await downloads.at(-1).text());assert.equal(withImages.projects[0].images.length,2);assert.equal(withImages.projects[0].reference.name,'logo.png');
- await click('[data-act="remove-image"][data-i="0"]');assert.equal(w.document.querySelectorAll('.image-card').length,1);
+ await click('[data-act="export-pdf"]');assert.equal((await PDFLib.PDFDocument.load(await downloads.at(-1).arrayBuffer())).getPageCount(),2);input('pdfMode','Qualidade original');await click('[data-act="export-pdf"]');assert.equal((await PDFLib.PDFDocument.load(await downloads.at(-1).arrayBuffer())).getPageCount(),2);
+ await click('[data-act="backup-current"]');const withImages=JSON.parse(await downloads.at(-1).text());assert.equal(withImages.projects[0].images.length,2);assert.equal(withImages.projects[0].reference.name,'logo.png');const drop=new w.Event('drop',{bubbles:true,cancelable:true});Object.defineProperty(drop,'dataTransfer',{value:{files:[new w.File([png],'pagina_01.png',{type:'image/png'})]}});el('#image-drop').dispatchEvent(drop);await tick();assert.equal(w.document.querySelectorAll('.image-card').length,3);assert.ok(el('.image-card p').textContent.includes('pagina_01.png'));
+ await click('[data-act="remove-image"][data-i="0"]');assert.equal(w.document.querySelectorAll('.image-card').length,2);
  await click('[data-act="new"]');input('title','Planejamento manual');await click('[data-act="manual-plan"]');assert.equal(el('[data-page="0"][data-key="content"]').value,'');await click('[data-act="copy-batch"]');assert.ok(el('#toast').textContent.includes('Preencha'));
  URL.createObjectURL=oldURLCreate;URL.revokeObjectURL=oldURLRevoke;
  pending.forEach(clearTimeout);globalThis.setTimeout=nativeTimeout;globalThis.setInterval=nativeInterval;dom.window.close();

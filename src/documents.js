@@ -24,12 +24,12 @@ export async function extractDocument(file,{pdfjs,mammoth,pdfOptions={},onProgre
  if(!text.trim())throw new Error('O documento não contém texto extraível. Se for escaneado, aplique OCR antes de importar.');
  return {text,warnings};
 }
-export async function createImagePDF({images,title,PDFLib,convertWebP,onProgress=()=>{}}){
+export async function createImagePDF({images,title,PDFLib,convertWebP,compact=false,compressImage,onProgress=()=>{}}){
  if(!images.length)throw new Error('Importe as imagens primeiro.');
  if(!PDFLib)throw new Error('Biblioteca PDF indisponível.');
  const doc=await PDFLib.PDFDocument.create();doc.setTitle(title||'Apostilando');doc.setCreator('Apostilando');
  for(let i=0;i<images.length;i++){
-  onProgress(i+1,images.length);let data=images[i].data;let image;
+  onProgress(i+1,images.length);let data=images[i].data;let image;if(compact){if(!compressImage)throw new Error('Compactador de imagens indisponível.');data=await compressImage(data);}
   if(data.startsWith('data:image/png;'))image=await doc.embedPng(data);
   else if(data.startsWith('data:image/jpeg;'))image=await doc.embedJpg(data);
   else if(data.startsWith('data:image/webp;')){if(!convertWebP)throw new Error('Conversor WebP indisponível.');image=await doc.embedPng(await convertWebP(data));}

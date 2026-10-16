@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.3.0
+
+Prompts individuais e roteiros incluem nomes de arquivo com prefixos 01, 02, 03 e título, além de lista TXT dos nomes. Adiciona estilo 3D tipo Pixar com personagens originais e contemporâneos. Destaca a importação de imagens, permite arrastar e soltar, ordena por nome e avisa diferenças entre quantidade de imagens e páginas. Adiciona PDF compacto por padrão, com limite A4 aproximado de 144 dpi e JPEG 84%, preservando os originais; qualidade original permanece disponível. 37 testes aprovados.
+
 ## 1.2.1
 
 Distribui documentos por frases completas, sem cortar no meio de uma frase. Se faltarem blocos completos para a quantidade pedida, informa um total máximo em vez de fragmentar o texto. Reforça margens A4, área útil, corpo legível, prioridade do texto e revisão de palavras/linhas faltantes nos prompts. Acrescenta alerta de densidade acima de 1.400 caracteres ou 180 palavras por página. Corrige quebra de linhas, cartões, botões, modal e controles de seleção para a largura disponível. 32 testes aprovados; não houve verificação visual em navegador real ou geração de imagens no Flow.

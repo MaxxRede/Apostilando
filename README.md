@@ -112,3 +112,13 @@ A distribuição de documentos usa frases completas e preserva os caracteres ext
 Os prompts pedem margens de 15 mm em A4, texto antes de ilustrações, fonte legível, frases completas e conferência da última palavra/linha de cada bloco. Em conteúdo gerado por tema, orientam concisão de 80 a 160 palavras por página; texto importado continua integral e pode exigir redistribuição. O alerta de densidade é uma estimativa local, não uma medição da imagem final. A interface ajusta controles, botões e textos longos à largura disponível.
 
 O Flow pode ainda produzir erros de texto dentro de imagens; a instrução não garante correção tipográfica. Confira cada resultado. A alternativa para fidelidade tipográfica é compor texto como texto real e usar IA apenas nas ilustrações, recurso ainda fora desta versão.
+
+## Nomes, imagens e PDF compacto (1.3.0)
+
+Cada prompt inclui um nome sugerido, como `01_capa_curso.png`, `02_conteudo.png` e assim por diante. A lista pode ser baixada em TXT. O nome é uma instrução à ferramenta externa, não uma garantia de renomeação do Flow. Se o download vier com outro nome, renomeie mantendo o prefixo numérico. O nome de arquivo não deve ser desenhado na imagem.
+
+Use **Subir imagens e montar PDF** depois de gerar as páginas. Selecione várias imagens ou arraste JPG, PNG e WebP à área indicada. Os arquivos são ordenados numericamente pelo nome, inclusive em importações adicionais. Você pode mudar a ordem pelas setas ou ordenar novamente pelos nomes. O sistema informa o total planejado e importado para ajudar a conferir faltantes e duplicatas.
+
+**Compacto (recomendado)** é o padrão da exportação: mantém proporção, não amplia originais pequenos, limita o tamanho a aproximadamente 1191×1684 pixels e usa JPEG com qualidade 84%. Originais PNG/JPEG pequenos que já sejam mais leves podem ser preservados. Transparência compactada recebe fundo branco. O tamanho final depende das imagens e o modo compacto envolve perda de detalhes; confira o texto antes de compartilhar. **Qualidade original** incorpora PNG/JPEG sem reduzir e converte WebP em PNG. Imagens guardadas e backups continuam com os originais em ambos os modos.
+
+O estilo **3D tipo Pixar (personagens originais)** descreve modelagem de animação cinematográfica, rostos expressivos, materiais suaves e iluminação de estúdio, mantendo personagens contemporâneos e adequados à idade do público. Não usa personagens existentes como modelos fixos. O Flow interpreta o prompt e não há envio automático a ele.
