@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.14.0
+
+Move a transcrição completa para junto do envio do documento, antes das configurações extensas. Mostra nome do arquivo, quantidade de caracteres, copiar e baixar TXT. Importação ativa Usar meu material e leva foco à transcrição; alternar para Criar do zero preserva e exibe o texto com aviso. O painel lateral acompanha a rolagem vertical no desktop, limitado à área de edição e à altura disponível.
+
+
 ## 1.13.0
 
 Adiciona texto livre de identificação em todas as páginas do PDF, inclusive capas, com posições no cabeçalho, rodapé ou vertical nas laterais. Paginação centralizada força o texto na borda oposta. Preserva o texto completo e avisa se não couber, sem truncar. Adiciona opção de identificação visível de sequência nos títulos solicitados ao Flow, independente do nome do download; não há garantia de execução pela IA. 68 testes aprovados.
