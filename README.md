@@ -188,3 +188,8 @@ O BAT sempre baixa uma cópia atual do GitHub antes de publicar, inclusive quand
 ## Perfis profissionais (1.9.0)
 
 Além de Qualquer assunto e Apostila escolar, há perfis para gestores, vendedores, corretores de imóveis, advogados, médicos, psicólogos e outros profissionais (campo livre). Cada perfil modifica o tom, a persona didática e as orientações nos prompts, com exemplos e cuidados pertinentes à área. O público informado prevalece. O texto importado é preservado. O perfil não altera a montagem do PDF nem a fonte ou estilo escolhidos. A opção Música e partituras foi removida; projetos anteriores migram para Qualquer assunto sem perder páginas.
+
+
+## Mais estilos e nomes sequenciais (1.10.0)
+
+Há 30 estilos, com Pixel art removido e oito novas técnicas com prévias: guache, óleo, xilogravura, low poly, line art, chibi, webtoon e retrofuturismo. Cada prompt individual começa pelo nome sugerido, como 01_Precificar.png e 02_Como_fazer.png. O Flow recebe instruções para usar o identificador também no download quando esse recurso estiver disponível. Se o Flow não nomear os arquivos, é necessário renomeá-los ou usar a ordenação manual e o ZIP numerado do Apostilando. Os identificadores não são desenhados na imagem.

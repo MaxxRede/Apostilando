@@ -10,6 +10,6 @@ await cp('node_modules/@fontsource/montserrat/LICENSE','dist/vendor/fonts/Montse
 const {version}=JSON.parse(await readFile('package.json','utf8'));
 for(const file of await readdir('dist/src'))if(file.endsWith('.js')){const path='dist/src/'+file;await writeFile(path,(await readFile(path,'utf8')).replace(/(from\s+['"]\.\/[^'"]+\.js)(['"])/g,`$1?v=${version}$2`));}
 await writeFile('dist/index.html',(await readFile('dist/index.html','utf8')).replace(/(src\/(?:style\.css|app\.js))(["'])/g,`$1?v=${version}$2`));
-await writeFile('dist/src/style.css',(await readFile('dist/src/style.css','utf8')).replace("illustration-styles.png'",`illustration-styles.png?v=${version}'`));
+await writeFile('dist/src/style.css',(await readFile('dist/src/style.css','utf8')).replace(/(illustration-styles(?:-extra)?\.png)(')/g,`$1?v=${version}$2`));
 await writeFile('dist/_headers' ,'/*\n  Cache-Control: no-cache\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n');
 console.log('Build pronto em dist/; bibliotecas incluídas, sem CDN em execução.');

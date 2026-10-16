@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.10.0
+
+Remove Pixel art e adiciona guache, óleo, xilogravura, low poly, line art, chibi, webtoon e retrofuturismo, totalizando 30 estilos com prévias. Mantém o mapeamento das amostras anteriores. Prompts individuais começam pelo nome sequencial do arquivo, e as orientações de nomeação são reforçadas nos prompts individuais e no lote. Projetos em Pixel art migram para Desenhado à mão sem perder páginas.
+
+
 ## 1.9.0
 
 Remove Música e partituras e adiciona perfis de gestores, vendedores, corretores, advogados, médicos, psicólogos e outros profissionais com profissão livre. Cada perfil define tom, persona didática, exemplos e particularidades nos prompts individuais e em lote. Preserva a fonte, idioma, estilo e texto importado. Projetos antigos de música abrem no perfil geral sem apagar páginas.
