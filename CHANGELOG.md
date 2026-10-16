@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.15.2
+
+Remove Capa/Contracapa do texto do título e deixa a função apenas no metadado role. Limpa marcadores dos títulos de projetos antigos. Retira a opção de códigos visíveis no Flow e proíbe desenhar prefixos na arte; os prefixos são exclusivos dos arquivos e a paginação permanece exclusiva do exportador PDF. O comando de correção também orienta retirar rótulos técnicos e códigos já desenhados.
+
+
 ## 1.15.1
 
 Corrige a interpretação de padronização: cada página mantém seu título temático na imagem; o padrão é fonte, tamanho, cor, alinhamento e posição. Retira a orientação para omitir o título no Flow. Separa a identificação fixa e impede que a recomposição opcional reutilize o título geral da apostila. Recomposição fica desativada por padrão e projetos da versão anterior são migrados para essa configuração.

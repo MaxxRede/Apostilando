@@ -227,3 +227,8 @@ Para materiais já gerados, ative o modo em Montar PDF, edite o título de cada 
 ## Distinção dos títulos (1.15.1)
 
 O nome geral da apostila, o título temático de cada página e a identificação fixa são três elementos distintos. O Flow recebe o título temático exato de cada página, com orientação de manter a fonte escolhida, 28 pt negrito, cor sólida #143c35, alinhamento à esquerda, mesma caixa e margens. O padrão visual permanece igual; as palavras mudam conforme o tema. A identificação fixa é aplicada separadamente pelo exportador e não é incluída no título temático. A instrução de omitir o título principal introduzida em 1.15.0 foi retirada. A recomposição no PDF continua opcional, desativada por padrão, e não usa o nome geral do material como substituto para páginas sem título. O Flow ainda pode divergir das instruções e exige revisão das imagens geradas.
+
+
+## Capa sem rótulo e arte sem código (1.15.2)
+
+O título visível da capa é somente o título informado, sem a palavra Capa acrescentada pelo sistema. O tipo da página permanece separado no planejamento. Projetos antigos removem esses marcadores ao abrir. O Flow não recebe mais instrução de desenhar 01_ no topo ou no título; essa opção foi retirada. Os prefixos continuam nos nomes de arquivos. A paginação é aplicada pelo PDF, na posição configurada. Para imagens anteriores, o comando Padronizar visual no Flow pede retirar o rótulo técnico e o código desenhado, sem remover números do conteúdo.
