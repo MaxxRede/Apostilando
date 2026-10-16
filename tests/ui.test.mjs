@@ -1,0 +1,28 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {JSDOM} from 'jsdom';
+import {indexedDB} from 'fake-indexeddb';
+const tick=()=>new Promise(r=>setTimeout(r,35));
+test('fluxo de edição, salvamento, histórico, favoritos e montagem',async()=>{
+ const dom=new JSDOM(await readFile('index.html','utf8'),{url:'http://localhost/#apostilas'});
+ const w=dom.window;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
+ for(const [k,v] of Object.entries({window:w,document:w.document,location:w.location,indexedDB,confirm:()=>true}))Object.defineProperty(globalThis,k,{value:v,configurable:true});
+ const pending=[];const nativeTimeout=globalThis.setTimeout;globalThis.setTimeout=(...args)=>{const t=nativeTimeout(...args);pending.push(t);return t;};
+ const nativeInterval=globalThis.setInterval;globalThis.setInterval=(...args)=>{const t=nativeInterval(...args);t.unref();return t;};
+ const copied=[];Object.defineProperty(globalThis,'navigator',{value:{clipboard:{writeText:async s=>copied.push(s)}},configurable:true});
+ await import('../src/app.js');
+ const el=s=>w.document.querySelector(s);const click=async s=>{assert.ok(el(s),s);el(s).click();await tick();};
+ const input=(key,value)=>{const e=el(`[data-field="${key}"]`);e.value=value;e.dispatchEvent(new w.Event('input',{bubbles:true}));};
+ input('title','Roteirização de vendas');input('count','14');await click('[data-act="plan"]');
+ assert.equal(w.document.querySelectorAll('.page-card').length,14);
+ await click('[data-act="copy-batch"]');assert.ok(copied[0].includes('=== PÁGINA 14 ==='));
+ const content=el('[data-page="0"][data-key="content"]');content.value='Meu texto integral';content.dispatchEvent(new w.Event('input',{bubbles:true}));
+ await click('[data-act="save"]');
+ w.location.hash='historico';await tick();assert.equal(w.document.querySelectorAll('.project-card').length,1);
+ await click('[data-act="favorite"]');w.location.hash='favoritos';await tick();assert.equal(w.document.querySelectorAll('.project-card').length,1);
+ await click('[data-act="open"]');await tick();assert.equal(el('[data-page="0"][data-key="content"]').value,'Meu texto integral');
+ await click('[data-act="tab-pdf"]');assert.ok(el('#image-files'));assert.equal(el('[data-act="export-pdf"]').disabled,true);
+ w.location.hash='conta';await tick();assert.ok(el('#main').textContent.includes('Exportar backup completo'));
+ pending.forEach(clearTimeout);globalThis.setTimeout=nativeTimeout;globalThis.setInterval=nativeInterval;dom.window.close();
+});
