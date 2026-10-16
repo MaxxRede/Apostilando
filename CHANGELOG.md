@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.4.0
+
+Permite clicar, segurar e arrastar miniaturas para mudar a ordem do PDF. Acrescenta campo de posição por imagem e ZIP com nomes 01, 02, 03 seguindo a sequência escolhida, preservando bytes e extensões originais. Nomes descritivos do Flow não são ordenados alfabeticamente para inferir sequência. Ordenação automática só é aplicada quando todas as imagens têm prefixos de página reconhecíveis. Coleções de 100 páginas usam três dígitos. 41 testes aprovados, incluindo arraste em DOM simulado, posição, exportação e releitura de ZIP; não houve teste visual no navegador publicado.
+
 ## 1.3.0
 
 Prompts individuais e roteiros incluem nomes de arquivo com prefixos 01, 02, 03 e título, além de lista TXT dos nomes. Adiciona estilo 3D tipo Pixar com personagens originais e contemporâneos. Destaca a importação de imagens, permite arrastar e soltar, ordena por nome e avisa diferenças entre quantidade de imagens e páginas. Adiciona PDF compacto por padrão, com limite A4 aproximado de 144 dpi e JPEG 84%, preservando os originais; qualidade original permanece disponível. 37 testes aprovados.

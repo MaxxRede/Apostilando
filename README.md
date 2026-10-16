@@ -117,8 +117,19 @@ O Flow pode ainda produzir erros de texto dentro de imagens; a instrução não 
 
 Cada prompt inclui um nome sugerido, como `01_capa_curso.png`, `02_conteudo.png` e assim por diante. A lista pode ser baixada em TXT. O nome é uma instrução à ferramenta externa, não uma garantia de renomeação do Flow. Se o download vier com outro nome, renomeie mantendo o prefixo numérico. O nome de arquivo não deve ser desenhado na imagem.
 
-Use **Subir imagens e montar PDF** depois de gerar as páginas. Selecione várias imagens ou arraste JPG, PNG e WebP à área indicada. Os arquivos são ordenados numericamente pelo nome, inclusive em importações adicionais. Você pode mudar a ordem pelas setas ou ordenar novamente pelos nomes. O sistema informa o total planejado e importado para ajudar a conferir faltantes e duplicatas.
+Use **Subir imagens e montar PDF** depois de gerar as páginas. Selecione várias imagens ou arraste JPG, PNG e WebP à área indicada. A ordenação automática pelos nomes só é aplicada quando todos os arquivos têm prefixos de página reconhecíveis; nomes descritivos do Flow não são usados para inferir sequência. Você pode mudar a ordem pelas setas ou ordenar novamente pelos nomes. O sistema informa o total planejado e importado para ajudar a conferir faltantes e duplicatas.
 
 **Compacto (recomendado)** é o padrão da exportação: mantém proporção, não amplia originais pequenos, limita o tamanho a aproximadamente 1191×1684 pixels e usa JPEG com qualidade 84%. Originais PNG/JPEG pequenos que já sejam mais leves podem ser preservados. Transparência compactada recebe fundo branco. O tamanho final depende das imagens e o modo compacto envolve perda de detalhes; confira o texto antes de compartilhar. **Qualidade original** incorpora PNG/JPEG sem reduzir e converte WebP em PNG. Imagens guardadas e backups continuam com os originais em ambos os modos.
 
 O estilo **3D tipo Pixar (personagens originais)** descreve modelagem de animação cinematográfica, rostos expressivos, materiais suaves e iluminação de estúdio, mantendo personagens contemporâneos e adequados à idade do público. Não usa personagens existentes como modelos fixos. O Flow interpreta o prompt e não há envio automático a ele.
+
+## Organizar e renomear as imagens (1.4.0)
+
+Os nomes descritivos atribuídos pelo Flow, como `Woman_holding_tablet_2026...jpg`, não identificam com segurança a página correspondente. Ordená-los alfabeticamente pode embaralhar o material. A plataforma não lê as imagens para adivinhar essa correspondência.
+
+1. Importe as imagens em Montar PDF.
+2. Confira as miniaturas. Clique, segure e arraste uma imagem sobre a posição desejada. Também pode usar as setas ou o campo Posição no PDF.
+3. A ordem exibida é a ordem usada na exportação do PDF e no ZIP numerado.
+4. Clique em Baixar imagens numeradas (ZIP) para obter nomes reais como `01.jpg`, `02.png`, `03.jpg`, preservando as extensões e os bytes originais. Extraia esse ZIP para ver os arquivos organizados no Windows. Os arquivos antigos da pasta Downloads não são modificados.
+
+O cartão exibe o nome original e o novo nome no ZIP. Uma coleção de 100 imagens usa `001` a `100` para manter a ordenação por nome. O botão de ordenação por prefixo aceita nomes como `01_capa`, `pagina_02` e `10_conteudo`. Se algum nome não identificar uma página, o sistema pede organização manual em vez de supor a sequência pelo assunto ou pela data.
