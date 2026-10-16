@@ -183,3 +183,8 @@ O seletor de estilo mostra uma amostra visual da mesma cena em cada técnica. Us
 ## Atualização garantida pelo instalador (1.8.1)
 
 O BAT sempre baixa uma cópia atual do GitHub antes de publicar, inclusive quando executado numa pasta com arquivos antigos. A pasta original não é alterada. O nome do projeto Cloudflare é reutilizado. Confira a versão no terminal e no rodapé do site.
+
+
+## Perfis profissionais (1.9.0)
+
+Além de Qualquer assunto e Apostila escolar, há perfis para gestores, vendedores, corretores de imóveis, advogados, médicos, psicólogos e outros profissionais (campo livre). Cada perfil modifica o tom, a persona didática e as orientações nos prompts, com exemplos e cuidados pertinentes à área. O público informado prevalece. O texto importado é preservado. O perfil não altera a montagem do PDF nem a fonte ou estilo escolhidos. A opção Música e partituras foi removida; projetos anteriores migram para Qualquer assunto sem perder páginas.

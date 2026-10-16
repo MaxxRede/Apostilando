@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.9.0
+
+Remove Música e partituras e adiciona perfis de gestores, vendedores, corretores, advogados, médicos, psicólogos e outros profissionais com profissão livre. Cada perfil define tom, persona didática, exemplos e particularidades nos prompts individuais e em lote. Preserva a fonte, idioma, estilo e texto importado. Projetos antigos de música abrem no perfil geral sem apagar páginas.
+
+
 ## 1.8.1
 
 Corrige o BAT para sempre baixar a versão atual do GitHub, mesmo dentro de uma pasta antiga do projeto. Exibe a versão no instalador e no rodapé. O build adiciona a versão às URLs dos módulos e CSS, e solicita revalidação dos arquivos para evitar cache antigo após atualização.
