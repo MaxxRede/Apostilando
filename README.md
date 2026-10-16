@@ -215,3 +215,10 @@ Na etapa Criar material, Pedir ao Flow um título com sequência visível solici
 ## Transcrição visível e painel flutuante (1.14.0)
 
 Ao importar PDF textual, DOCX, TXT ou MD, o sistema mostra a transcrição completa e editável no início da etapa Criar material. A importação ativa Usar meu material, informa o nome do arquivo e a quantidade de caracteres, oferece cópia integral e download TXT e posiciona a tela no texto. Trocar para Criar do zero preserva a transcrição visível e informa que ela não será usada nesse modo. PDFs escaneados ainda exigem OCR externo. O quadro Um passo de cada vez acompanha a rolagem vertical em telas maiores que 1120 px, mantém o mesmo formato e tem rolagem interna quando não couber na altura da janela.
+
+
+## Títulos compostos pelo sistema (1.15.0)
+
+A opção Títulos padronizados pelo Apostilando no PDF aparece em Criar material e Montar PDF. Quando ativada, os próximos prompts pedem ao Flow somente o corpo ilustrado e um identificador simples opcional para a sequência. O exportador acrescenta o título em uma área fixa de 160 pt, na fonte selecionada, em negrito 28 pt, alinhado à esquerda, com até três linhas. Não altera o tamanho para acomodar textos longos: solicita edição do título. O título e as margens são iguais entre as páginas, independentemente do estilo ilustrado.
+
+Para materiais já gerados, ative o modo em Montar PDF, edite o título de cada miniatura e ajuste o corte superior (0 a 45%) para retirar o título antigo. A faixa vermelha indica o que será retirado; confira para não cortar conteúdo. O corte começa em zero e só afeta o PDF; imagens, ZIP e backup preservam os originais. Sem corte, o título antigo continuará na imagem além do novo título. Projetos anteriores mantêm o modo desativado até escolha explícita. O modo não padroniza automaticamente os textos que permanecem dentro da imagem.

@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.15.0
+
+Adiciona títulos compostos pelo exportador PDF com fonte escolhida, 28 pt negrito, alinhamento à esquerda, área fixa e máximo de três linhas sem reduzir tamanho. Disponibiliza título editável por imagem e corte superior manual com faixa marcada, preservando originais. O modo pede ao Flow apenas o corpo ilustrado nas próximas gerações. Novos projetos têm o modo ativado; projetos anteriores mantêm a composição original até ativação explícita. Mantém a posição do título entre capa e conteúdo mesmo com paginação no cabeçalho.
+
+
 ## 1.14.0
 
 Move a transcrição completa para junto do envio do documento, antes das configurações extensas. Mostra nome do arquivo, quantidade de caracteres, copiar e baixar TXT. Importação ativa Usar meu material e leva foco à transcrição; alternar para Criar do zero preserva e exibe o texto com aviso. O painel lateral acompanha a rolagem vertical no desktop, limitado à área de edição e à altura disponível.
