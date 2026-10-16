@@ -32,7 +32,7 @@ Conecte este repositório ao Pages, usando `main`, comando de build `npm ci && n
 ## Fluxo
 
 1. Informe um tema ou importe PDF com texto selecionável, DOCX, TXT ou MD (até 20 MB).
-2. Prepare de 1 a 100 páginas e revise os títulos e conteúdos.
+2. Prepare de 1 a 100 páginas de conteúdo e revise os títulos e conteúdos. Capa, contracapa e síntese são extras.
 3. Copie os prompts individuais ou o roteiro completo e gere as imagens no Flow ou em outra IA.
 4. Importe as imagens, confira a ordem e exporte o PDF.
 5. Salve e exporte um backup JSON para conservar o projeto completo.
@@ -101,7 +101,7 @@ Português do Brasil é o padrão dos novos projetos e o fallback de idioma ause
 
 ## Composição da apostila (1.2.0)
 
-Marque Capa, Contracapa e Síntese final do aprendizado antes de planejar. Capa e síntese vêm marcadas em novos projetos; contracapa é opcional. A quantidade informada é o total, incluindo esses itens. Exemplo: 14 páginas com os três itens = capa + 11 páginas de conteúdo + síntese + contracapa. O mínimo é uma página de conteúdo além dos itens selecionados.
+Marque Capa, Contracapa e Síntese final do aprendizado antes de planejar. Capa e síntese vêm marcadas em novos projetos; contracapa é opcional. A quantidade informada conta somente o conteúdo. Exemplo: 14 páginas de conteúdo com os três itens = capa + 14 páginas de conteúdo + síntese + contracapa, totalizando 17 páginas. O mínimo é uma página de conteúdo além dos itens selecionados.
 
 O documento importado é distribuído integralmente entre as páginas de conteúdo. A síntese pede principais conceitos, habilidades, aplicação prática, checklist e autoavaliação, com base no material. Os prompts para capa e contracapa não incluem numeração visível. Em projetos já planejados, mudar os marcadores não apaga páginas: use Planejar páginas para aplicar a nova estrutura, após revisar o aviso de substituição. Os títulos e conteúdos continuam editáveis. Fichas e capas avulsas não usam esses marcadores.
 
@@ -165,3 +165,11 @@ A seleção fica no projeto e no backup. Ao mudar a fonte, copie novamente os pr
 O seletor Estilo da ilustração tem 23 opções. Inclui Quadrinhos/HQ, Tirinhas, HQ brasileira com referência Turma da Mônica, Anime de aventura com referência ThunderCats, Cartoon satírico com referência Simpsons, Mangá, Anime contemporâneo, HQ de super-heróis, animação 2D com referência Disney, animação 3D com referência DreamWorks, 3D tipo Pixar, Aquarela, Giz/lápis, Recorte de papel, Massinha, Pixel art, Infográfico minimalista, Sketch/sketchnote, Realismo fotográfico e os estilos anteriores.
 
 Cada seleção adiciona orientações próprias de traço, cor, acabamento e personagens ao prompt. As referências são direções visuais para personagens originais. O estilo deve ser mantido em todas as páginas, sem mudar a fonte e o idioma escolhidos pelo usuário. A fonte pode ser selecionada livremente no campo Fonte de todas as páginas. Escolha o estilo e copie novamente os prompts; imagens já geradas não mudam automaticamente. A interpretação visual continua a cargo da ferramenta externa.
+
+## Prévia da fonte e páginas extras (1.7.0)
+
+Abaixo de Fonte de todas as páginas, a prévia mostra título, subtítulo, parágrafo, números e acentos na família escolhida. A troca do seletor atualiza a visualização. Montserrat é fornecida junto ao sistema, sem CDN em execução. Arial, Helvetica, Calibri, Verdana, Georgia, Times New Roman e Courier New dependem da instalação no dispositivo; o sistema tenta verificar a disponibilidade e informa quando a prévia estiver usando uma alternativa. A aparência da imagem produzida pelo Flow não é garantida pela prévia local.
+
+**Páginas de conteúdo** é a quantidade principal. Capa, contracapa e síntese são adicionadas por fora dessa quantidade. O cálculo aparece abaixo dos marcadores: por exemplo, 14 conteúdos + 3 extras = 17 páginas no PDF. O limite é 100 conteúdos e até três extras, com suporte a 103 imagens. O texto importado é dividido apenas nas páginas de conteúdo.
+
+Projetos antigos mantêm exatamente as páginas já salvas. Quando abertos, o contador é ajustado para refletir a quantidade de páginas de conteúdo existentes, sem recriar ou apagar o material. Novos planejamentos seguem a regra de extras. A importação de backups aplica a mesma migração.

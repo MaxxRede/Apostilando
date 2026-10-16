@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.7.0
+
+Adiciona visualizador da fonte escolhida com título, subtítulo, parágrafo, números e acentos. Montserrat é incluída localmente em 400/700; fontes de sistema ausentes são sinalizadas. A quantidade informada agora conta somente páginas de conteúdo: capa, síntese e contracapa são extras. 14 conteúdos com três extras geram 17 páginas. Suporta até 100 conteúdos + 3 extras, preserva textos e migra o contador de projetos antigos sem alterar suas páginas. 53 testes aprovados.
+
 ## 1.6.0
 
 Amplia para 23 estilos, incluindo quadrinhos, tirinhas, HQ brasileira com referência Turma da Mônica, aventura com referência ThunderCats, cartoon com referência Simpsons, mangá, anime, super-heróis, referências Disney/DreamWorks, aquarela, lápis, papel recortado, massinha, pixel art, infográfico, sketchnote e fotografia. Cada opção produz orientação visual própria e exige consistência entre páginas, mantendo a fonte e o idioma escolhidos. Inclui as correções de Novo material e seleção de fonte descritas em 1.5.1/1.5.2. A espera do teste de interface agora observa a conclusão da operação em vez de presumir que o PDF estará pronto em um intervalo fixo. 50 testes aprovados.
