@@ -203,3 +203,10 @@ Auto escolhe uma família entre Lato, Nunito e Open Sans, diferentes das oito fo
 ## Prefixos garantidos ao baixar (1.12.0)
 
 Em Montar PDF, Baixar com prefixo salva uma imagem como 01_Titulo.png (com a extensão original). O ZIP usa a mesma regra para todas as imagens na ordem exibida, preferindo o título da página planejada. Sem planejamento, usa uma versão limpa do nome original. Nenhum arquivo original ou seus bytes é alterado. O Flow recebe a orientação de nomear, mas os downloads diretos dele continuam fora do controle do Apostilando. Para nomes garantidos, importe, confira a ordem e baixe pelo sistema.
+
+
+## Identificação e sequência (1.13.0)
+
+Em Montar PDF, o campo Título / identificação em todas as páginas aceita o texto completo digitado pelo usuário. Licenciado para é somente um exemplo; o sistema não acrescenta prefixo fixo. O texto é aplicado pelo exportador em todas as páginas, inclusive capa e contracapa, sem alterar as imagens originais. Pode ficar no cabeçalho, rodapé ou verticalmente em uma das laterais. Se a paginação estiver centralizada no cabeçalho, o texto fica no rodapé; se estiver centralizada no rodapé, fica no cabeçalho. Com outra posição de número ou sem paginação, as quatro posições ficam disponíveis. O texto usa Arial local, pode ocupar até duas linhas e ajustar o tamanho entre 10 e 6 pt. Se não couber, o exportador solicita ajuste e não corta o texto.
+
+Na etapa Criar material, Pedir ao Flow um título com sequência visível solicita o identificador 01_Titulo, 02_Titulo etc. no título da própria imagem. É independente do número circular aplicado no PDF. O Flow ainda pode ignorar a orientação. Imagens já geradas não recebem esse identificador retroativamente. Importe e confira a sequência pelas miniaturas antes de baixar o ZIP ou PDF: o sistema não deduz a ordem de imagens sem identificação.

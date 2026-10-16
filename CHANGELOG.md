@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.13.0
+
+Adiciona texto livre de identificação em todas as páginas do PDF, inclusive capas, com posições no cabeçalho, rodapé ou vertical nas laterais. Paginação centralizada força o texto na borda oposta. Preserva o texto completo e avisa se não couber, sem truncar. Adiciona opção de identificação visível de sequência nos títulos solicitados ao Flow, independente do nome do download; não há garantia de execução pela IA. 68 testes aprovados.
+
+
 ## 1.12.0
 
 Adiciona as seis posições de paginação com prévia e persistência em projeto/backup. A exportação renderiza Arial local 10 pt, número preto em círculo branco com borda branca, independente da fonte do conteúdo, reservando uma faixa sem cortar a imagem. Corrige nomes do ZIP para prefixo com sublinhado e título, como 01_Precificar.png, e adiciona download individual com prefixo. O Flow continua sem garantia de obedecer à nomeação; os downloads do Apostilando aplicam o padrão diretamente. 63 testes aprovados.
