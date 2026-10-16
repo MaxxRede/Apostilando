@@ -104,3 +104,11 @@ Português do Brasil é o padrão dos novos projetos e o fallback de idioma ause
 Marque Capa, Contracapa e Síntese final do aprendizado antes de planejar. Capa e síntese vêm marcadas em novos projetos; contracapa é opcional. A quantidade informada é o total, incluindo esses itens. Exemplo: 14 páginas com os três itens = capa + 11 páginas de conteúdo + síntese + contracapa. O mínimo é uma página de conteúdo além dos itens selecionados.
 
 O documento importado é distribuído integralmente entre as páginas de conteúdo. A síntese pede principais conceitos, habilidades, aplicação prática, checklist e autoavaliação, com base no material. Os prompts para capa e contracapa não incluem numeração visível. Em projetos já planejados, mudar os marcadores não apaga páginas: use Planejar páginas para aplicar a nova estrutura, após revisar o aviso de substituição. Os títulos e conteúdos continuam editáveis. Fichas e capas avulsas não usam esses marcadores.
+
+## Integridade do texto e ajuste de tela (1.2.1)
+
+A distribuição de documentos usa frases completas e preserva os caracteres extraídos. Quebras de linha dentro de frases extraídas de PDF não são usadas isoladamente como cortes de página. Quando não há blocos completos suficientes para preencher a quantidade solicitada, o sistema pede um total menor ou conteúdo adicional. Não modifica páginas já salvas automaticamente: replaneje a partir do texto original para aplicar a nova divisão, após exportar backup se houver edições manuais.
+
+Os prompts pedem margens de 15 mm em A4, texto antes de ilustrações, fonte legível, frases completas e conferência da última palavra/linha de cada bloco. Em conteúdo gerado por tema, orientam concisão de 80 a 160 palavras por página; texto importado continua integral e pode exigir redistribuição. O alerta de densidade é uma estimativa local, não uma medição da imagem final. A interface ajusta controles, botões e textos longos à largura disponível.
+
+O Flow pode ainda produzir erros de texto dentro de imagens; a instrução não garante correção tipográfica. Confira cada resultado. A alternativa para fidelidade tipográfica é compor texto como texto real e usar IA apenas nas ilustrações, recurso ainda fora desta versão.
