@@ -62,3 +62,15 @@ Projetos e imagens ficam no IndexedDB deste navegador. Há salvamento automátic
 - `tests/core.test.mjs`: verificações funcionais.
 
 Código e identidade próprios, com organização funcional inspirada no fluxo analisado. Não inclui código, materiais privados ou ativos da plataforma de referência.
+
+## Instalar diretamente no Cloudflare com BAT
+
+Execute **INSTALAR_CLOUDFLARE.bat** no Windows com Node.js LTS 22 ou superior. Nao precisa de Python, Git, GAS ou Sheets para publicar.
+
+O BAT pode ser executado sozinho: se os arquivos do sistema nao estiverem na mesma pasta, ele baixa a versao atual deste repositorio e extrai uma nova copia em `%LOCALAPPDATA%\Apostilando\downloads`. Se estiver dentro da pasta completa do repositorio, publica essa copia local.
+
+O instalador executa `npm ci`, gera `dist`, abre o login oficial do Cloudflare com Wrangler e cria um projeto Pages com nome unico `apostilando-...`. Depois publica em producao. A URL real e exibida pelo Wrangler. Login e escolhas de conta sao feitos no seu computador.
+
+O nome do projeto fica em `%USERPROFILE%\.apostilando\cloudflare.json`, sem senhas ou tokens. Nas proximas execucoes, o BAT atualiza o mesmo projeto; use a mesma conta Cloudflare. Uma falha interrompe o processo e mostra a etapa que precisa ser corrigida. Se a criacao ja tiver sido concluida, o nome e preservado para repetir a publicacao.
+
+Esta e uma publicacao por Direct Upload. Ela nao configura deploy automatico a cada commit no GitHub. Execute novamente o instalador com os arquivos atualizados para publicar mudancas. O site fica acessivel pela URL do Pages; os documentos, projetos e imagens do usuario continuam apenas no navegador.
