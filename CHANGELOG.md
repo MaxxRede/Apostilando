@@ -1,5 +1,9 @@
 # Alterações
 
+## 1.4.1
+
+Repete a escolha de idioma explicitamente dentro de cada página do roteiro. Exibe o idioma alvo em Montar PDF e adiciona Corrigir idioma no Flow: comando de edição que traduz integralmente o texto da imagem anexada, preservando personagens e composição. Adiciona Substituir imagem no mesmo cartão, sem mudar a posição no PDF. Não realiza tradução automática nem leitura OCR; o resultado do Flow precisa de conferência. 43 testes aprovados.
+
 ## 1.4.0
 
 Permite clicar, segurar e arrastar miniaturas para mudar a ordem do PDF. Acrescenta campo de posição por imagem e ZIP com nomes 01, 02, 03 seguindo a sequência escolhida, preservando bytes e extensões originais. Nomes descritivos do Flow não são ordenados alfabeticamente para inferir sequência. Ordenação automática só é aplicada quando todas as imagens têm prefixos de página reconhecíveis. Coleções de 100 páginas usam três dígitos. 41 testes aprovados, incluindo arraste em DOM simulado, posição, exportação e releitura de ZIP; não houve teste visual no navegador publicado.

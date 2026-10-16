@@ -133,3 +133,11 @@ Os nomes descritivos atribuídos pelo Flow, como `Woman_holding_tablet_2026...jp
 4. Clique em Baixar imagens numeradas (ZIP) para obter nomes reais como `01.jpg`, `02.png`, `03.jpg`, preservando as extensões e os bytes originais. Extraia esse ZIP para ver os arquivos organizados no Windows. Os arquivos antigos da pasta Downloads não são modificados.
 
 O cartão exibe o nome original e o novo nome no ZIP. Uma coleção de 100 imagens usa `001` a `100` para manter a ordenação por nome. O botão de ordenação por prefixo aceita nomes como `01_capa`, `pagina_02` e `10_conteudo`. Se algum nome não identificar uma página, o sistema pede organização manual em vez de supor a sequência pelo assunto ou pela data.
+
+## Imagens geradas no idioma errado (1.4.1)
+
+A instrução de idioma agora é repetida dentro de cada página, explicitando que o idioma da conta ou de exemplos não substitui a escolha do usuário. Isso não garante que a IA externa obedeça. O Apostilando não detecta automaticamente o idioma dentro dos pixels nem altera imagens já geradas.
+
+Em Montar PDF, confira o idioma alvo em destaque. Para uma imagem em inglês indevidamente, clique em **Corrigir idioma no Flow**, copie o comando, anexe a imagem original no Flow e solicite a edição. O comando pede tradução integral para o idioma selecionado, preservando o conteúdo, personagens, estilo e composição. Depois de conferir a imagem corrigida, use **Substituir imagem** no mesmo cartão para manter sua posição no PDF e no ZIP. O arquivo anterior não é alterado na sua pasta de downloads.
+
+A função usa o idioma atual do projeto, inclusive se espanhol ou inglês tiverem sido escolhidos explicitamente. Revise essa seleção antes de copiar o comando. A correção no Flow pode consumir os recursos da sua conta naquele serviço e seu resultado deve ser conferido.
