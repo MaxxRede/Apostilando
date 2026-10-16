@@ -74,3 +74,23 @@ O instalador executa `npm ci`, gera `dist`, abre o login oficial do Cloudflare c
 O nome do projeto fica em `%USERPROFILE%\.apostilando\cloudflare.json`, sem senhas ou tokens. Nas proximas execucoes, o BAT atualiza o mesmo projeto; use a mesma conta Cloudflare. Uma falha interrompe o processo e mostra a etapa que precisa ser corrigida. Se a criacao ja tiver sido concluida, o nome e preservado para repetir a publicacao.
 
 Esta e uma publicacao por Direct Upload. Ela nao configura deploy automatico a cada commit no GitHub. Execute novamente o instalador com os arquivos atualizados para publicar mudancas. O site fica acessivel pela URL do Pages; os documentos, projetos e imagens do usuario continuam apenas no navegador.
+
+## Revisão 1.1.0
+
+- Planejamento manual com edição e validação de páginas sem conteúdo.
+- Divisão por palavras, preservando integralmente o texto extraído e evitando páginas vazias quando há conteúdo suficiente.
+- Roteiro completo de documentos reforça a preservação do texto sem tradução nem resumo.
+- Upload, download e backup de foto/logo de referência (é necessário anexá-la também na IA externa).
+- Impressão dos prompts com opção de salvar em PDF pelo navegador.
+- Importação de imagens com ordenação numérica pelo nome; reordenação manual disponível.
+- PNG e JPEG incorporados diretamente no PDF, preservando a qualidade original; WebP convertido em PNG.
+- Leitor PDF avisa sobre páginas sem texto e PDFs protegidos. Fontes e mapas de caracteres incluídos no build.
+- Favoritos preservados após reedição; arquivamento e restauração testados.
+- Backups com validação de configurações, referências e imagens, sem substituir projetos existentes.
+- Indicador de alterações pendentes e proteção contra ações concorrentes durante leitura/exportação.
+
+### Verificação realizada
+
+20 testes automatizados passam. Incluem importação de arquivos PDF e DOCX reais, TXT/MD, geração e releitura de PDF com 14 páginas A4, conversão WebP com adaptador, roteiro integral, validação de backup e fluxo de interface em DOM simulado: edição, cópia, impressão, salvamento, busca, duplicação, favoritos, arquivamento/restauração, backup/importação e importação/reordenação de PNGs.
+
+A decodificação visual das imagens no teste de interface usa um adaptador simulado; o PDF final é criado e relido com bibliotecas reais. A janela de impressão e a área de transferência usam adaptadores no teste. Não houve inspeção visual em navegador real nem teste autenticado da publicação no Cloudflare. A geração de imagens continua externa; não há IA ou OCR ocultos. O uso do roteiro em lote no Flow depende dos recursos da conta e precisa de validação no próprio Flow.
