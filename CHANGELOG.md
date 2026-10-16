@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.8.1
+
+Corrige o BAT para sempre baixar a versão atual do GitHub, mesmo dentro de uma pasta antiga do projeto. Exibe a versão no instalador e no rodapé. O build adiciona a versão às URLs dos módulos e CSS, e solicita revalidação dos arquivos para evitar cache antigo após atualização.
+
+
 ## 1.8.0
 
 Adiciona amostras visuais dos 23 estilos de ilustração, com a mesma cena para comparação, navegação anterior/próximo e ampliação. As prévias são ilustrativas e não garantem o resultado do Flow.

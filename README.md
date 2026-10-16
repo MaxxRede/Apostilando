@@ -178,3 +178,8 @@ Projetos antigos mantêm exatamente as páginas já salvas. Quando abertos, o co
 ## Prévia dos estilos (1.8.0)
 
 O seletor de estilo mostra uma amostra visual da mesma cena em cada técnica. Use as setas para percorrer os 23 estilos ou escolha pelo nome. Ampliar prévia abre a amostra maior. As imagens são exemplos ilustrativos, não uma simulação exata do Flow.
+
+
+## Atualização garantida pelo instalador (1.8.1)
+
+O BAT sempre baixa uma cópia atual do GitHub antes de publicar, inclusive quando executado numa pasta com arquivos antigos. A pasta original não é alterada. O nome do projeto Cloudflare é reutilizado. Confira a versão no terminal e no rodapé do site.
