@@ -232,3 +232,8 @@ O nome geral da apostila, o título temático de cada página e a identificaçã
 ## Capa sem rótulo e arte sem código (1.15.2)
 
 O título visível da capa é somente o título informado, sem a palavra Capa acrescentada pelo sistema. O tipo da página permanece separado no planejamento. Projetos antigos removem esses marcadores ao abrir. O Flow não recebe mais instrução de desenhar 01_ no topo ou no título; essa opção foi retirada. Os prefixos continuam nos nomes de arquivos. A paginação é aplicada pelo PDF, na posição configurada. Para imagens anteriores, o comando Padronizar visual no Flow pede retirar o rótulo técnico e o código desenhado, sem remover números do conteúdo.
+
+
+## Metadados fora da arte (1.15.3)
+
+Os identificadores sequenciais dos prompts e os nomes de download são metadados, não texto para desenhar na imagem. As instruções de geração não descrevem mais o número, a posição ou o círculo da paginação do PDF. Nos documentos importados, o rótulo interno Trecho 01 não é título visual: o Flow recebe orientação para criar um título do assunto do trecho, sem repetir o nome geral do arquivo com contador. Se o usuário editar esse campo, ele passa a ser um título temático explícito. A montagem, o texto fixo e a paginação continuam configurados e aplicados somente no PDF.

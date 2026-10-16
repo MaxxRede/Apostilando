@@ -1,5 +1,10 @@
 # Alterações
 
+## 1.15.3
+
+Separa metadados do prompt do texto visual. Retira instruções com número, posição e círculo do PDF dos prompts de geração. Trechos de documentos importados deixam de ter título geral mais contador; usam rótulo interno e orientação de título temático, com migração dos títulos automáticos antigos. O prefixo sequencial fica no nome do arquivo. Mantém a montagem manual e a paginação do PDF separadas da geração no Flow.
+
+
 ## 1.15.2
 
 Remove Capa/Contracapa do texto do título e deixa a função apenas no metadado role. Limpa marcadores dos títulos de projetos antigos. Retira a opção de códigos visíveis no Flow e proíbe desenhar prefixos na arte; os prefixos são exclusivos dos arquivos e a paginação permanece exclusiva do exportador PDF. O comando de correção também orienta retirar rótulos técnicos e códigos já desenhados.
